@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ country.country }} - Details</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn">← Back</a>
+        <h1>{{ country.country }}</h1>
+
+        <div class="card">
+            <p><strong>PR Name:</strong> {{ country.pr_name }}</p>
+            <p><strong>PR Years:</strong> {{ country.pr_years }}</p>
+            <p><strong>Student Route:</strong> {{ country.student_route }}</p>
+            <p><strong>Work Route:</strong> {{ country.work_route }}</p>
+            <p><strong>Family Route:</strong> {{ country.family_route }}</p>
+            <p><strong>Language Required:</strong> {{ country.language_required }}</p>
+            <p><strong>Income Requirement:</strong> {{ country.income_requirement }}</p>
+            <p><strong>Absence Rule:</strong> {{ country.absence_rule }}</p>
+            <p><strong>Citizenship Years:</strong> {{ country.citizenship_years }}</p>
+            <p><strong>Spouse Allowed:</strong> {{ country.spouse_allowed }}</p>
+            <p><strong>Spouse Work Allowed:</strong> {{ country.spouse_work_allowed }}</p>
+            <p><strong>Official Source:</strong> <a href="{{ country.official_source }}" target="_blank">{{ country.official_source }}</a></p>
+            <p><strong>Last Updated:</strong> {{ country.last_updated }}</p>
+        </div>
+    </div>
+</body>
+</html>

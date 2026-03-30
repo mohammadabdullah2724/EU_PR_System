@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Countries</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn">← Back</a>
+        <h1>Compare Countries</h1>
+
+        <form method="get" action="/compare">
+            <label>Select country IDs separated by comma:</label>
+            <input type="text" name="ids" placeholder="Example: 1,2,3">
+            <button type="submit" class="btn blue">Compare</button>
+        </form>
+
+        <h2>Available Countries</h2>
+        <ul>
+            {% for c in all_countries %}
+            <li>{{ c.id }} - {{ c.country }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if selected %}
+        <h2>Comparison Result</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    {% for c in selected %}
+                    <th>{{ c.country }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PR Name</td>
+                    {% for c in selected %}<td>{{ c.pr_name }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>PR Years</td>
+                    {% for c in selected %}<td>{{ c.pr_years }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>Student Route</td>
+                    {% for c in selected %}<td>{{ c.student_route }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>Work Route</td>
+                    {% for c in selected %}<td>{{ c.work_route }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>Family Route</td>
+                    {% for c in selected %}<td>{{ c.family_route }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>Language Required</td>
+                    {% for c in selected %}<td>{{ c.language_required }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>Citizenship Years</td>
+                    {% for c in selected %}<td>{{ c.citizenship_years }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>Spouse Allowed</td>
+                    {% for c in selected %}<td>{{ c.spouse_allowed }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    <td>Spouse Work Allowed</td>
+                    {% for c in selected %}<td>{{ c.spouse_work_allowed }}</td>{% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</body>
+</html>
